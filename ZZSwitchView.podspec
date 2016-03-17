@@ -8,5 +8,5 @@ s.authors  = { 'Aaron' => '562540603@qq.com' }
 s.source   = { :git => 'https://github.com/AaronYin0514/ZZSwithView.git', :tag => s.version }
 s.requires_arc = true
 s.framework = 'UIKit'
-s.source_files = 'ZZSwutcgItem/*.{h,m}'
+s.source_files = 'ZZSwitchItem/*.{h,m}'
 end
