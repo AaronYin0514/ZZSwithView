@@ -15,6 +15,9 @@
 		775738191C98E8540020F70B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775738171C98E8540020F70B /* LaunchScreen.storyboard */; };
 		775738241C98E8550020F70B /* ZZSwithViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 775738231C98E8550020F70B /* ZZSwithViewDemoTests.m */; };
 		7757382F1C98E8550020F70B /* ZZSwithViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757382E1C98E8550020F70B /* ZZSwithViewDemoUITests.m */; };
+		775738491C99012E0020F70B /* ZZSwitchItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 775738451C99012E0020F70B /* ZZSwitchItemButton.m */; };
+		7757384A1C99012E0020F70B /* ZZSwitchItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 775738481C99012E0020F70B /* ZZSwitchItemView.m */; };
+		775738791C995B510020F70B /* ZZSwitchBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 775738781C995B510020F70B /* ZZSwitchBottomView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,13 @@
 		7757382A1C98E8550020F70B /* ZZSwithViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZSwithViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7757382E1C98E8550020F70B /* ZZSwithViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZSwithViewDemoUITests.m; sourceTree = "<group>"; };
 		775738301C98E8550020F70B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		775738441C99012E0020F70B /* ZZSwitchItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchItemButton.h; sourceTree = "<group>"; };
+		775738451C99012E0020F70B /* ZZSwitchItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSwitchItemButton.m; sourceTree = "<group>"; };
+		775738461C99012E0020F70B /* ZZSwitchItemHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchItemHeader.h; sourceTree = "<group>"; };
+		775738471C99012E0020F70B /* ZZSwitchItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchItemView.h; sourceTree = "<group>"; };
+		775738481C99012E0020F70B /* ZZSwitchItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSwitchItemView.m; sourceTree = "<group>"; };
+		775738771C995B510020F70B /* ZZSwitchBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchBottomView.h; sourceTree = "<group>"; };
+		775738781C995B510020F70B /* ZZSwitchBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSwitchBottomView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 		775738081C98E8540020F70B /* ZZSwithViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				775738431C99012E0020F70B /* ZZSwitchItem */,
 				7757380C1C98E8540020F70B /* AppDelegate.h */,
 				7757380D1C98E8540020F70B /* AppDelegate.m */,
 				7757380F1C98E8540020F70B /* ViewController.h */,
@@ -138,6 +149,20 @@
 				775738301C98E8550020F70B /* Info.plist */,
 			);
 			path = ZZSwithViewDemoUITests;
+			sourceTree = "<group>";
+		};
+		775738431C99012E0020F70B /* ZZSwitchItem */ = {
+			isa = PBXGroup;
+			children = (
+				775738441C99012E0020F70B /* ZZSwitchItemButton.h */,
+				775738451C99012E0020F70B /* ZZSwitchItemButton.m */,
+				775738461C99012E0020F70B /* ZZSwitchItemHeader.h */,
+				775738471C99012E0020F70B /* ZZSwitchItemView.h */,
+				775738481C99012E0020F70B /* ZZSwitchItemView.m */,
+				775738771C995B510020F70B /* ZZSwitchBottomView.h */,
+				775738781C995B510020F70B /* ZZSwitchBottomView.m */,
+			);
+			path = ZZSwitchItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				775738491C99012E0020F70B /* ZZSwitchItemButton.m in Sources */,
 				775738111C98E8540020F70B /* ViewController.m in Sources */,
 				7757380E1C98E8540020F70B /* AppDelegate.m in Sources */,
+				775738791C995B510020F70B /* ZZSwitchBottomView.m in Sources */,
 				7757380B1C98E8540020F70B /* main.m in Sources */,
+				7757384A1C99012E0020F70B /* ZZSwitchItemView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +526,7 @@
 				775738351C98E8550020F70B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		775738361C98E8550020F70B /* Build configuration list for PBXNativeTarget "ZZSwithViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +535,7 @@
 				775738381C98E8550020F70B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		775738391C98E8550020F70B /* Build configuration list for PBXNativeTarget "ZZSwithViewDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +544,7 @@
 				7757383B1C98E8550020F70B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "ZZSwitchItemView.h"
 
-@interface ViewController ()
+@interface ViewController () <ZZSwithViewDelegate, ZZSwithViewDataSource>
+{
+    NSArray *_dataArray;
+    ZZSwitchItemView *_switchItemView;
+}
 
 @end
 
@@ -16,12 +21,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor redColor];
+    _dataArray = @[@"测试一", @"测试二", @"测试三"];
+    _switchItemView = [[ZZSwitchItemView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 44)];
+    _switchItemView.delegate = self;
+    _switchItemView.dataSource = self;
+    [self.view addSubview:_switchItemView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - ZZSwithViewDelegate
+-(void)switchView:(ZZSwitchItemView *)switchView didSelectAtIndex:(NSInteger)index {
+    NSLog(@"~~~~~~%ld", index);
 }
+
+#pragma mark - ZZSwithViewDataSource
+- (NSInteger)numberOfItemInSwitchView:(ZZSwitchItemView *)switchView {
+    return _dataArray.count;
+}
+
+- (NSString *)switchView:(ZZSwitchItemView *)switchView titleForItemAtIndex:(NSInteger)index {
+    return _dataArray[index];
+}
+
 
 @end
