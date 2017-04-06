@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    //self.view.backgroundColor = [UIColor redColor];
     _dataArray = @[@"测试一", @"测试二", @"测试三"];
     _switchItemView = [[ZZSwitchItemView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 44)];
     _switchItemView.delegate = self;

@@ -15,9 +15,9 @@
 		775738191C98E8540020F70B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775738171C98E8540020F70B /* LaunchScreen.storyboard */; };
 		775738241C98E8550020F70B /* ZZSwithViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 775738231C98E8550020F70B /* ZZSwithViewDemoTests.m */; };
 		7757382F1C98E8550020F70B /* ZZSwithViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757382E1C98E8550020F70B /* ZZSwithViewDemoUITests.m */; };
-		775738491C99012E0020F70B /* ZZSwitchItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 775738451C99012E0020F70B /* ZZSwitchItemButton.m */; };
-		7757384A1C99012E0020F70B /* ZZSwitchItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 775738481C99012E0020F70B /* ZZSwitchItemView.m */; };
-		775738791C995B510020F70B /* ZZSwitchBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 775738781C995B510020F70B /* ZZSwitchBottomView.m */; };
+		93EDF5F61E963AA700E0E41E /* ZZSwitchBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EDF5F01E963AA700E0E41E /* ZZSwitchBottomView.m */; };
+		93EDF5F71E963AA700E0E41E /* ZZSwitchItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EDF5F21E963AA700E0E41E /* ZZSwitchItemButton.m */; };
+		93EDF5F81E963AA700E0E41E /* ZZSwitchItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EDF5F51E963AA700E0E41E /* ZZSwitchItemView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +54,13 @@
 		7757382A1C98E8550020F70B /* ZZSwithViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZSwithViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7757382E1C98E8550020F70B /* ZZSwithViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZSwithViewDemoUITests.m; sourceTree = "<group>"; };
 		775738301C98E8550020F70B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		775738441C99012E0020F70B /* ZZSwitchItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchItemButton.h; sourceTree = "<group>"; };
-		775738451C99012E0020F70B /* ZZSwitchItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSwitchItemButton.m; sourceTree = "<group>"; };
-		775738461C99012E0020F70B /* ZZSwitchItemHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchItemHeader.h; sourceTree = "<group>"; };
-		775738471C99012E0020F70B /* ZZSwitchItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchItemView.h; sourceTree = "<group>"; };
-		775738481C99012E0020F70B /* ZZSwitchItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSwitchItemView.m; sourceTree = "<group>"; };
-		775738771C995B510020F70B /* ZZSwitchBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchBottomView.h; sourceTree = "<group>"; };
-		775738781C995B510020F70B /* ZZSwitchBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSwitchBottomView.m; sourceTree = "<group>"; };
+		93EDF5EF1E963AA700E0E41E /* ZZSwitchBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchBottomView.h; sourceTree = "<group>"; };
+		93EDF5F01E963AA700E0E41E /* ZZSwitchBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSwitchBottomView.m; sourceTree = "<group>"; };
+		93EDF5F11E963AA700E0E41E /* ZZSwitchItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchItemButton.h; sourceTree = "<group>"; };
+		93EDF5F21E963AA700E0E41E /* ZZSwitchItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSwitchItemButton.m; sourceTree = "<group>"; };
+		93EDF5F31E963AA700E0E41E /* ZZSwitchItemHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchItemHeader.h; sourceTree = "<group>"; };
+		93EDF5F41E963AA700E0E41E /* ZZSwitchItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchItemView.h; sourceTree = "<group>"; };
+		93EDF5F51E963AA700E0E41E /* ZZSwitchItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSwitchItemView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,13 +154,13 @@
 		775738431C99012E0020F70B /* ZZSwitchItem */ = {
 			isa = PBXGroup;
 			children = (
-				775738441C99012E0020F70B /* ZZSwitchItemButton.h */,
-				775738451C99012E0020F70B /* ZZSwitchItemButton.m */,
-				775738461C99012E0020F70B /* ZZSwitchItemHeader.h */,
-				775738471C99012E0020F70B /* ZZSwitchItemView.h */,
-				775738481C99012E0020F70B /* ZZSwitchItemView.m */,
-				775738771C995B510020F70B /* ZZSwitchBottomView.h */,
-				775738781C995B510020F70B /* ZZSwitchBottomView.m */,
+				93EDF5EF1E963AA700E0E41E /* ZZSwitchBottomView.h */,
+				93EDF5F01E963AA700E0E41E /* ZZSwitchBottomView.m */,
+				93EDF5F11E963AA700E0E41E /* ZZSwitchItemButton.h */,
+				93EDF5F21E963AA700E0E41E /* ZZSwitchItemButton.m */,
+				93EDF5F31E963AA700E0E41E /* ZZSwitchItemHeader.h */,
+				93EDF5F41E963AA700E0E41E /* ZZSwitchItemView.h */,
+				93EDF5F51E963AA700E0E41E /* ZZSwitchItemView.m */,
 			);
 			path = ZZSwitchItem;
 			sourceTree = "<group>";
@@ -295,12 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				775738491C99012E0020F70B /* ZZSwitchItemButton.m in Sources */,
+				93EDF5F71E963AA700E0E41E /* ZZSwitchItemButton.m in Sources */,
+				93EDF5F81E963AA700E0E41E /* ZZSwitchItemView.m in Sources */,
 				775738111C98E8540020F70B /* ViewController.m in Sources */,
+				93EDF5F61E963AA700E0E41E /* ZZSwitchBottomView.m in Sources */,
 				7757380E1C98E8540020F70B /* AppDelegate.m in Sources */,
-				775738791C995B510020F70B /* ZZSwitchBottomView.m in Sources */,
 				7757380B1C98E8540020F70B /* main.m in Sources */,
-				7757384A1C99012E0020F70B /* ZZSwitchItemView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

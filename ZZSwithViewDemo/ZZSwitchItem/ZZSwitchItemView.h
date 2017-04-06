@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "ZZSwitchItemHeader.h"
+#import "ZZSwitchBottomView.h"
 @protocol ZZSwithViewDelegate;
 @protocol ZZSwithViewDataSource;
+
+typedef NS_ENUM(NSInteger, ZZSwitchItemViewSeparatorStyle) {
+    ZZSwitchItemViewSeparatorStyleNone, // 不添加分割线
+    ZZSwitchItemViewSeparatorStyleSingleLine  // 默认
+};
+
+typedef NS_ENUM(NSInteger, ZZTipViewStyle) {
+    ZZTipViewNone, // 不添加
+    ZZTipViewBottom,  // 默认
+};
 
 @interface ZZSwitchItemView : UIView
 /**
@@ -21,6 +32,27 @@
  */
 @property (weak, nonatomic) id <ZZSwithViewDataSource> dataSource;
 /**
+ * 分割线样式，⚠️这个属性需要在设置代理前进行设置，一次设置不能更改。
+ */
+@property (assign, nonatomic) ZZSwitchItemViewSeparatorStyle separatorStyle;
+/**
+ * 分割线颜色，默认为[UIColor colorWithRed:(229 / 255.0) green:(230 / 255.0) blue:(231 / 255.0) alpha:1.0]
+ */
+@property (strong, nonatomic) UIColor *separatorColor;
+/**
+ * 底部分割线颜色
+ */
+@property (strong, nonatomic) UIColor *bottomSeparatorColor;
+/**
+ *  标题下面的view
+ */
+@property (strong, nonatomic, readonly) ZZSwitchBottomView *tipView;
+
+@property (assign, nonatomic) ZZTipViewStyle tipStyle;
+
+@property (strong, nonatomic) UIColor *tipViewColor;
+
+/**
  *  设置选中item的索引
  *
  *  @param index    索引
@@ -31,6 +63,8 @@
 @end
 
 @protocol ZZSwithViewDelegate <NSObject>
+
+@optional
 /**
  *  当某一个item被点击时出发回调
  *
@@ -48,5 +82,12 @@
 - (NSInteger)numberOfItemInSwitchView:(ZZSwitchItemView *)switchView;
 
 - (NSString *)switchView:(ZZSwitchItemView *)switchView titleForItemAtIndex:(NSInteger)index;
+
+@optional
+
+- (UIFont *)switchView:(ZZSwitchItemView *)switchView fontForSelectedStatus:(BOOL)status;
+
+- (UIColor *)switchView:(ZZSwitchItemView *)switchView titleColorForselectedStatus:(BOOL)status;
+
 
 @end
