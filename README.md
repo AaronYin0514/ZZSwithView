@@ -29,7 +29,7 @@ _switchItemView.dataSource = self;
 
 数据源和代理
 
-```
+```obj-c
 #pragma mark - ZZSwithViewDataSource
 - (NSInteger)numberOfItemInSwitchView:(ZZSwitchItemView *)switchView {
     return _itemsArray.count;
@@ -55,7 +55,7 @@ _switchItemView.dataSource = self;
 
 选择到制定分段
 
-```
+```obj-c
 [weakSelf.switchItemView setSelectedItemIndex:index animated:NO];
 ```
 
