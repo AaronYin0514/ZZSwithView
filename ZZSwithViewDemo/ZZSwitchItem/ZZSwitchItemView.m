@@ -132,11 +132,27 @@ static const CGFloat interValue = 16.0;
             *stop = YES;
         }
     }];
+    UIButton *button = _buttonArray[index];
+    if (self.scrollView.contentSize.width > self.frame.size.width) {
+        if (CGRectGetMaxX(button.frame) < CGRectGetWidth(self.frame) / 2) {
+            self.scrollView.contentOffset = CGPointZero;
+            return;
+        }
+        if (CGRectGetMinX(button.frame) > (self.scrollView.contentSize.width - CGRectGetWidth(self.frame) / 2 + 10)) {
+            self.scrollView.contentOffset = CGPointMake(self.scrollView.contentSize.width - self.frame.size.width, 0);
+            return;
+        }
+        CGFloat x = CGRectGetMidX(button.frame) - CGRectGetWidth(self.frame) / 2;
+        if (x > self.scrollView.contentSize.width - self.frame.size.width) {
+            x = self.scrollView.contentSize.width - self.frame.size.width;
+        }
+        self.scrollView.contentOffset = CGPointMake(x, 0);
+    }
 }
 
 -(CGFloat)buttomItemWidthForIndex:(NSInteger)idx {
     NSInteger count = [self.dataSource numberOfItemInSwitchView:self];
-    CGFloat aveWidth = (self.frame.size.width - count * intervalLineWidth) / count;
+    CGFloat aveWidth = self.frame.size.width / count;
     
     UIFont *font = nil;
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(switchView:fontForSelectedStatus:)]) {
@@ -161,12 +177,12 @@ static const CGFloat interValue = 16.0;
             NSString *title = [self.dataSource switchView:self titleForItemAtIndex:i];
             [totalTitleStr appendString:title];
         }
-        totalWidth = [self widthForTitle:totalTitleStr font:font];
+        totalWidth = [self widthForTitle:totalTitleStr font:font]+ count * interValue;
         
         NSString *title = [self.dataSource switchView:self titleForItemAtIndex:idx];
         CGFloat currentWidth = [self widthForTitle:title font:font] + interValue;
         
-        if (totalWidth + count * interValue > self.bounds.size.width) {
+        if (totalWidth > self.bounds.size.width) {
             return currentWidth;
         } else {
             if (currentWidth > aveWidth) {
@@ -284,7 +300,6 @@ static const CGFloat interValue = 16.0;
         button.selected = YES;
     }
     [self refreshButtonSelectedStatusWithIndex:index];
-    
 }
 
 #pragma mark - 设置
@@ -314,10 +329,10 @@ static const CGFloat interValue = 16.0;
             NSString *title = [self.dataSource switchView:self titleForItemAtIndex:i];
             [totalTitleStr appendString:title];
         }
-        totalWidth = [self widthForTitle:totalTitleStr font:font];
-        if (totalWidth + count * interValue > self.bounds.size.width) {
+        totalWidth = [self widthForTitle:totalTitleStr font:font] + count * interValue;
+        if (totalWidth > self.bounds.size.width) {
             if (self.scrollView.contentSize.width <= self.bounds.size.width) {
-                self.scrollView.contentSize = CGSizeMake(totalWidth + count * interValue, self.bounds.size.height);
+                self.scrollView.contentSize = CGSizeMake(totalWidth, self.bounds.size.height);
             }
         }
         
