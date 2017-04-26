@@ -27,6 +27,14 @@
     _switchItemView.delegate = self;
     _switchItemView.dataSource = self;
     [self.view addSubview:_switchItemView];
+    
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"Next" forState:UIControlStateNormal];
+    button.backgroundColor = [UIColor blueColor];
+    button.frame = CGRectMake(100, 300, 80, 40);
+    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
 }
 
 #pragma mark - ZZSwithViewDelegate
@@ -43,5 +51,9 @@
     return _dataArray[index];
 }
 
+#pragma mark - Action
+- (void)buttonClick:(UIButton *)btn {
+    
+}
 
 @end

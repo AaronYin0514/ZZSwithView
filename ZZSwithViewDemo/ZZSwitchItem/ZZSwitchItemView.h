@@ -31,6 +31,8 @@ typedef NS_ENUM(NSInteger, ZZTipViewStyle) {
  *  数据源
  */
 @property (weak, nonatomic) id <ZZSwithViewDataSource> dataSource;
+
+@property (assign, nonatomic, readonly) NSUInteger selectedIndex;
 /**
  * 分割线样式，⚠️这个属性需要在设置代理前进行设置，一次设置不能更改。
  */

@@ -115,6 +115,7 @@ static const CGFloat bottomLineHeight = 1.0f;
 #pragma mark - 私有方法， 工具方法
 #pragma mark 刷新选项的选中状态
 -(void)refreshButtonSelectedStatusWithIndex:(NSInteger)index {
+    _selectedIndex = index;
     [_buttonArray enumerateObjectsUsingBlock:^(ZZSwitchItemButton *button, NSUInteger idx, BOOL * _Nonnull stop) {
         if (button.tag != index && button.isSelected == YES) {
             button.selected = NO;
@@ -256,7 +257,7 @@ static const CGFloat bottomLineHeight = 1.0f;
  *  @param animated 是否有动画
  */
 -(void)setSelectedItemIndex:(NSInteger)index animated:(BOOL)animated {
-    if (index >= _buttonArray.count) {
+    if (index >= _buttonArray.count || index < 0) {
         return;
     }
     ZZSwitchItemButton *button = _buttonArray[index];
