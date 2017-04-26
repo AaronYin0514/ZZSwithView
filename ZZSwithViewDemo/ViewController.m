@@ -22,9 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    _dataArray = @[@"测试1", @"测试2", @"测试3", @"测试4", @"测试5", @"测试6", @"测试7", @"测试8", @"测试9", @"测试10", @"测试11", @"测试12"];
+    _dataArray = @[@"测试1", @"测试2", @"测试3", @"测试测试测试4", @"测试5", @"测试6", @"测试测试7", @"测试8", @"测试9", @"测试10", @"测试11", @"测试测试测试测试12"];
     _switchItemView = [[ZZSwitchItemView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 44)];
-    _switchItemView.tipStyle = ZZTipViewNone;
+    //_switchItemView.tipStyle = ZZTipViewNone;
     _switchItemView.delegate = self;
     _switchItemView.dataSource = self;
     [self.view addSubview:_switchItemView];
