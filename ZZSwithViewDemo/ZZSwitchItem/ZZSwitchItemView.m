@@ -15,6 +15,8 @@ static const CGFloat intervalLineWidth = 1.0f;
 static const CGFloat titleBottomViewHeight = 3.0;
 static const CGFloat bottomLineHeight = 1.0f;
 
+static const CGFloat interValue = 16.0;
+
 @interface ZZSwitchItemView ()
 {
     NSInteger _layoutFinish;
@@ -30,6 +32,8 @@ static const CGFloat bottomLineHeight = 1.0f;
 @property (strong, nonatomic) UIView *bottomSeparatorView;
 
 @property (strong, nonatomic) UIScrollView *scrollView;
+
+@property (nonatomic, assign) BOOL isAnimating;
 
 @end
 
@@ -100,11 +104,17 @@ static const CGFloat bottomLineHeight = 1.0f;
 #pragma mark - Actons
 #pragma mark 选中某一个选项时，出发switchView:didSelectAtIndex:回调
 -(void)buttonDidSelected:(ZZSwitchItemButton *)btn {
+    if (self.isAnimating) {
+        return;
+    }
     CGFloat buttonWith = [self buttomItemWidthForIndex:btn.tag];
+    __weak typeof(self) weakSelf = self;
+    self.isAnimating = YES;
     [UIView animateWithDuration:0.25 animations:^{
         _tipView.frame = CGRectMake(CGRectGetMinX(btn.frame), self.frame.size.height - titleBottomViewHeight, buttonWith, titleBottomViewHeight);
     } completion:^(BOOL finished) {
         btn.selected = YES;
+        weakSelf.isAnimating = NO;
     }];
     [self refreshButtonSelectedStatusWithIndex:btn.tag];
     if (_delegate && [_delegate respondsToSelector:@selector(switchView:didSelectAtIndex:)]) {
@@ -125,8 +135,6 @@ static const CGFloat bottomLineHeight = 1.0f;
 }
 
 -(CGFloat)buttomItemWidthForIndex:(NSInteger)idx {
-    CGFloat interValue = 16.0;
-    
     NSInteger count = [self.dataSource numberOfItemInSwitchView:self];
     CGFloat aveWidth = (self.frame.size.width - count * intervalLineWidth) / count;
     
@@ -159,9 +167,6 @@ static const CGFloat bottomLineHeight = 1.0f;
         CGFloat currentWidth = [self widthForTitle:title font:font] + interValue;
         
         if (totalWidth + count * interValue > self.bounds.size.width) {
-            if (self.scrollView.contentSize.width <= self.bounds.size.width) {
-                self.scrollView.contentSize = CGSizeMake(totalWidth + count * interValue, self.bounds.size.height);
-            }
             return currentWidth;
         } else {
             if (currentWidth > aveWidth) {
@@ -260,19 +265,26 @@ static const CGFloat bottomLineHeight = 1.0f;
     if (index >= _buttonArray.count || index < 0) {
         return;
     }
+    if (self.isAnimating) {
+        return;
+    }
     ZZSwitchItemButton *button = _buttonArray[index];
     CGFloat buttonWith = [self buttomItemWidthForIndex:index];
     if (animated) {
+        __weak typeof(self) weakSelf = self;
+        self.isAnimating = YES;
         [UIView animateWithDuration:0.25 animations:^{
             _tipView.frame = CGRectMake(CGRectGetMinX(button.frame), self.frame.size.height - titleBottomViewHeight, buttonWith, titleBottomViewHeight);
         } completion:^(BOOL finished) {
             button.selected = YES;
+            weakSelf.isAnimating = NO;
         }];
     } else {
         _tipView.frame = CGRectMake(CGRectGetMinX(button.frame), self.frame.size.height - titleBottomViewHeight, buttonWith, titleBottomViewHeight);
         button.selected = YES;
     }
     [self refreshButtonSelectedStatusWithIndex:index];
+    
 }
 
 #pragma mark - 设置
@@ -290,6 +302,24 @@ static const CGFloat bottomLineHeight = 1.0f;
         }
         NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:count];
         NSMutableArray *mutableIntervalViewArray = [NSMutableArray arrayWithCapacity:count - 1];
+        
+        UIFont *font = nil;
+        if (self.dataSource && [self.dataSource respondsToSelector:@selector(switchView:fontForSelectedStatus:)]) {
+            font = [self.dataSource switchView:self fontForSelectedStatus:YES];
+        }
+        
+        CGFloat totalWidth = 0.0;
+        NSMutableString *totalTitleStr = [[NSMutableString alloc] init];
+        for (NSInteger i = 0; i < count; i++) {
+            NSString *title = [self.dataSource switchView:self titleForItemAtIndex:i];
+            [totalTitleStr appendString:title];
+        }
+        totalWidth = [self widthForTitle:totalTitleStr font:font];
+        if (totalWidth + count * interValue > self.bounds.size.width) {
+            if (self.scrollView.contentSize.width <= self.bounds.size.width) {
+                self.scrollView.contentSize = CGSizeMake(totalWidth + count * interValue, self.bounds.size.height);
+            }
+        }
         
         CGFloat startPoint = 0.0;
         
