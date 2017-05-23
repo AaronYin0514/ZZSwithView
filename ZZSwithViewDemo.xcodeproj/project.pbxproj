@@ -15,9 +15,9 @@
 		775738191C98E8540020F70B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775738171C98E8540020F70B /* LaunchScreen.storyboard */; };
 		775738241C98E8550020F70B /* ZZSwithViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 775738231C98E8550020F70B /* ZZSwithViewDemoTests.m */; };
 		7757382F1C98E8550020F70B /* ZZSwithViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757382E1C98E8550020F70B /* ZZSwithViewDemoUITests.m */; };
+		9354796D1ED405D700C5FF2A /* ZZSwitchItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9354796C1ED405D700C5FF2A /* ZZSwitchItemView.m */; };
 		93EDF5F61E963AA700E0E41E /* ZZSwitchBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EDF5F01E963AA700E0E41E /* ZZSwitchBottomView.m */; };
 		93EDF5F71E963AA700E0E41E /* ZZSwitchItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EDF5F21E963AA700E0E41E /* ZZSwitchItemButton.m */; };
-		93EDF5F81E963AA700E0E41E /* ZZSwitchItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EDF5F51E963AA700E0E41E /* ZZSwitchItemView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +54,13 @@
 		7757382A1C98E8550020F70B /* ZZSwithViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZSwithViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7757382E1C98E8550020F70B /* ZZSwithViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZSwithViewDemoUITests.m; sourceTree = "<group>"; };
 		775738301C98E8550020F70B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9354796B1ED405D700C5FF2A /* ZZSwitchItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchItemView.h; sourceTree = "<group>"; };
+		9354796C1ED405D700C5FF2A /* ZZSwitchItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSwitchItemView.m; sourceTree = "<group>"; };
 		93EDF5EF1E963AA700E0E41E /* ZZSwitchBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchBottomView.h; sourceTree = "<group>"; };
 		93EDF5F01E963AA700E0E41E /* ZZSwitchBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSwitchBottomView.m; sourceTree = "<group>"; };
 		93EDF5F11E963AA700E0E41E /* ZZSwitchItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchItemButton.h; sourceTree = "<group>"; };
 		93EDF5F21E963AA700E0E41E /* ZZSwitchItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSwitchItemButton.m; sourceTree = "<group>"; };
 		93EDF5F31E963AA700E0E41E /* ZZSwitchItemHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchItemHeader.h; sourceTree = "<group>"; };
-		93EDF5F41E963AA700E0E41E /* ZZSwitchItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSwitchItemView.h; sourceTree = "<group>"; };
-		93EDF5F51E963AA700E0E41E /* ZZSwitchItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSwitchItemView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,8 +159,8 @@
 				93EDF5F11E963AA700E0E41E /* ZZSwitchItemButton.h */,
 				93EDF5F21E963AA700E0E41E /* ZZSwitchItemButton.m */,
 				93EDF5F31E963AA700E0E41E /* ZZSwitchItemHeader.h */,
-				93EDF5F41E963AA700E0E41E /* ZZSwitchItemView.h */,
-				93EDF5F51E963AA700E0E41E /* ZZSwitchItemView.m */,
+				9354796B1ED405D700C5FF2A /* ZZSwitchItemView.h */,
+				9354796C1ED405D700C5FF2A /* ZZSwitchItemView.m */,
 			);
 			path = ZZSwitchItem;
 			sourceTree = "<group>";
@@ -296,7 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93EDF5F71E963AA700E0E41E /* ZZSwitchItemButton.m in Sources */,
-				93EDF5F81E963AA700E0E41E /* ZZSwitchItemView.m in Sources */,
+				9354796D1ED405D700C5FF2A /* ZZSwitchItemView.m in Sources */,
 				775738111C98E8540020F70B /* ViewController.m in Sources */,
 				93EDF5F61E963AA700E0E41E /* ZZSwitchBottomView.m in Sources */,
 				7757380E1C98E8540020F70B /* AppDelegate.m in Sources */,

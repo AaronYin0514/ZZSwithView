@@ -80,16 +80,6 @@ static const CGFloat interValue = 16.0;
     }
 }
 
-//- (void)setSeparatorStyle:(ZZSwitchItemViewSeparatorStyle)separatorStyle {
-//    if (_separatorStyle == separatorStyle) {
-//        return;
-//    }
-//    _separatorStyle = separatorStyle;
-//    if (separatorStyle == ZZSwitchItemViewSeparatorStyleNone) {
-//        
-//    }
-//}
-
 #pragma mark 初始化底部线
 -(void)initBottomLineView {
     if (self.tipStyle != ZZTipViewNone) {
@@ -134,21 +124,16 @@ static const CGFloat interValue = 16.0;
     }];
     UIButton *button = _buttonArray[index];
     if (self.scrollView.contentSize.width > self.frame.size.width) {
-        if (CGRectGetMaxX(button.frame) < CGRectGetWidth(self.frame) / 2) {
+        CGPoint cp = CGPointMake(CGRectGetCenter(button.frame).x - CGRectGetCenter(self.frame).x, 0);
+        if (cp.x < 0) {
             [self.scrollView setContentOffset:CGPointZero animated:YES];
-            return;
+        } else {
+            if (cp.x > self.scrollView.contentSize.width - self.frame.size.width) {
+                [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentSize.width - self.frame.size.width, 0) animated:YES];
+            } else {
+                [self.scrollView setContentOffset:cp animated:YES];
+            }
         }
-        // 没办法算那么准，设置10的容错值
-        if (CGRectGetMinX(button.frame) > (self.scrollView.contentSize.width - CGRectGetWidth(self.frame) / 2 + 10)) {
-            [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentSize.width - self.frame.size.width, 0) animated:YES];
-            //self.scrollView.contentOffset = CGPointMake(self.scrollView.contentSize.width - self.frame.size.width, 0);
-            return;
-        }
-        CGFloat x = CGRectGetMidX(button.frame) - CGRectGetWidth(self.frame) / 2;
-        if (x > self.scrollView.contentSize.width - self.frame.size.width) {
-            x = self.scrollView.contentSize.width - self.frame.size.width;
-        }
-        [self.scrollView setContentOffset:CGPointMake(x, 0) animated:YES];
     }
 }
 
